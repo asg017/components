@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const PeerDepsExternalsPlugin = require("peer-deps-externals-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -11,13 +12,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     library: "@codeblog/template",
-    libraryTarget: "umd"
+    libraryTarget: "umd",
+    globalObject: "this"
   },
   target: "web",
   resolve: {
     extensions: [".wasm", ".mjs", ".js", ".json", ".tsx", ".ts"]
   },
-  externals: ["react", "react-dom", "object-assign"],
   module: {
     rules: [
       {
@@ -63,6 +64,7 @@ module.exports = {
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: "[name].css"
-    })
+    }),
+    new PeerDepsExternalsPlugin()
   ]
 };
