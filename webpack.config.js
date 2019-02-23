@@ -1,13 +1,12 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, "src/index.tsx"),
-    styles: path.resolve(__dirname, "src/styles.css")
+    index: path.resolve(__dirname, "src/index.ts"),
+    Glitter: path.resolve(__dirname, "src/components/Glitter.tsx")
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -31,7 +30,7 @@ module.exports = {
         }
       },
       {
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
         options: {
@@ -60,7 +59,6 @@ module.exports = {
     new CleanWebpackPlugin(path.resolve(__dirname, "dist"), {
       root: path.resolve(__dirname)
     }),
-    new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
