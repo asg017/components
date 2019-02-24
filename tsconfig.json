@@ -3,8 +3,16 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
+    "lib": ["es6", "dom"],
+    "moduleResolution": "node",
     "module": "umd",
+    "rootDir": "src",
     "target": "es5",
-    "jsx": "react"
-  }
+    "jsx": "react",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules", "dist"]
 }

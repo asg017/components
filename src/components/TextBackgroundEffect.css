@@ -6,9 +6,9 @@
 
 .Codeblog-TextBackgroundEffect {
     color: blue;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
     letter-spacing: 1px;
     text-decoration: none;
 }

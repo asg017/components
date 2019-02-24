@@ -1,6 +1,6 @@
 {
   "name": "@codeblog/components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "browser": "dist/index.js",
   "repository": "git@github.com:codeblog/components.git",
@@ -12,9 +12,9 @@
     "deploy": "yarn build && yarn publish"
   },
   "peerDependencies": {
+    "object-assign": "*",
     "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "object-assign": "*"
+    "react-dom": "^16.8.3"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -37,6 +37,7 @@
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "react": "^16.8.3"
   }
 }

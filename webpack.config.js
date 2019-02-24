@@ -7,13 +7,14 @@ const PeerDepsExternalsPlugin = require("peer-deps-externals-webpack-plugin");
 module.exports = {
   entry: {
     index: path.resolve(__dirname, "src/index.ts"),
-    Glitter: path.resolve(__dirname, "src/components/Glitter.tsx")
+    Glitter: path.resolve(__dirname, "src/components/Glitter.tsx"),
+    Highlight: path.resolve(__dirname, "src/components/Highlight.tsx")
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
     library: "@codeblog/template",
     libraryTarget: "umd",
-    globalObject: "this"
+    globalObject: "typeof self !== 'undefined' ? self : this"
   },
   target: "web",
   resolve: {
