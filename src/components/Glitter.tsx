@@ -7,7 +7,7 @@ export const GLITTER_BACKGROUND_URL =
   "https://storage.googleapis.com/codeblog-public/Glitter.gif";
 
 interface GlitterProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
 }
 

@@ -34,11 +34,25 @@ module.exports = {
       {
         test: /\.tsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader",
-        options: {
-          presets: ["@babel/preset-env", "@babel/react", "@babel/typescript"],
-          plugins: ["@babel/plugin-proposal-class-properties"]
-        }
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                "@babel/preset-env",
+                "@babel/react",
+                "@babel/typescript"
+              ],
+              plugins: ["@babel/plugin-proposal-class-properties"]
+            }
+          },
+          {
+            loader: "ts-loader",
+            options: {
+              onlyCompileBundledFiles: true
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,

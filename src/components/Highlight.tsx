@@ -3,7 +3,7 @@ import classnames from "classnames";
 import "./Highlight.css";
 
 interface HighlightProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
   color?: "green" | "yellow" | "pink";
 }
