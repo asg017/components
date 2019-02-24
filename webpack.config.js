@@ -41,15 +41,9 @@ module.exports = {
               presets: [
                 "@babel/preset-env",
                 "@babel/react",
-                "@babel/typescript"
+                "@babel/preset-typescript"
               ],
               plugins: ["@babel/plugin-proposal-class-properties"]
-            }
-          },
-          {
-            loader: "ts-loader",
-            options: {
-              onlyCompileBundledFiles: true
             }
           }
         ]
